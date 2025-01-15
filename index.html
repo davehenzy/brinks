@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brinks Tracking</title>
+    <title>PDF Viewer</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
     <style>
         body {
@@ -25,10 +25,17 @@
             height: auto;
             margin-bottom: 20px;
         }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
     </style>
 </head>
 <body>
-    <div id="pdf-container"></div>
+    <!-- Make the entire PDF container clickable -->
+    <a href="https://locatio.netlify.app" target="_blank" id="pdf-link">
+        <div id="pdf-container"></div>
+    </a>
 
     <script>
         const url = 'Brinks3.pdf'; // Path to your PDF file
@@ -63,7 +70,4 @@
             }
         }).catch(error => {
             console.error('Error loading PDF:', error);
-        });
-    </script>
-</body>
-</html>
+        }
